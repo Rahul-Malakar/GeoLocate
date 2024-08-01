@@ -1,0 +1,34 @@
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import type { Map as LeafletMap } from 'leaflet';
+import 'leaflet/dist/leaflet.css'
+import type { Place } from "../api/Place"
+import { useEffect,useRef } from 'react';
+
+
+interface MapProps {
+    place: Place | null;
+}
+
+export default function Map({place}:MapProps){
+
+    const mapRef = useRef<LeafletMap|null>(null);
+
+    useEffect(()=>{
+        if(mapRef.current && place){
+            mapRef.current.flyTo([place.latitude,place.longitude])
+        }
+    }, [place])
+
+    return (
+        <MapContainer ref={mapRef}
+        center={[24.7573556, 92.7890024]}
+        zoom={13}
+        scrollWheelZoom
+        className='h-full'
+        >
+            <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'/>
+            {place && <Marker position={[place.latitude,place.longitude]} />}
+
+        </MapContainer>
+    )
+}
