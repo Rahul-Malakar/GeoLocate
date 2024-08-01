@@ -22,7 +22,7 @@ export default function LocationSearch({onPlaceClick}): LocationSearchProps{
         <div>
             <form onSubmit={handleSubmit}>
                 <label className="font-bold" htmlFor="term">
-                    Search
+                    Location Search
                 </label>
                 <input className="border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 px-4 py-2 w-full" 
                 id="term"
