@@ -3,8 +3,7 @@
 
 Live Website : 
 
-![Alt text](![image](https://github.com/user-attachments/assets/e49121ff-12e1-46a4-becf-5b512a6f92e2)
-)
+![image](https://github.com/user-attachments/assets/20674b87-7000-4752-b93e-423d78e4e8f9)
 
 
 ## Tech Stack
